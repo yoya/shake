@@ -41,7 +41,8 @@ var playSound = function() {
 // main
 window.onload = function() {
   // サウンドを読み込む
-  getAudioBuffer('VibraSlap.mp3', function(b) { buffer = b; });
+  var soundfile = document.getElementById("soundfile");
+  getAudioBuffer(soundfile.value, function(b) { buffer = b; });
 };
 
 document.addEventListener("touchstart", touch, false);
