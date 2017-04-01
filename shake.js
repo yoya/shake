@@ -27,17 +27,17 @@ var getAudioBuffer = function(url, fn) {
 };
 
 // サウンドを再生
-var soundmax = document.getElementById("soundmax");
-var soundmin = document.getElementById("soundmin");
+var rateMax = document.getElementById("rateMax");
+var rateMin = document.getElementById("rateMin");
 var playSound = function(volume) {
   // source を作成
   var source = context.createBufferSource();
   var gain = context.createGain();
   // buffer をセット
   source.buffer = buffer;
-  if (soundmax && soundmin) {
-      max = parseFloat(soundmax.value);
-      min = parseFloat(soundmin.value);
+  if (rateMax && rateMin) {
+      max = parseFloat(rateMax.value);
+      min = parseFloat(rateMin.value);
       source.playbackRate.value = min + Math.random() * (max - min);
   } else {
       source.playbackRate.value = 1.0
